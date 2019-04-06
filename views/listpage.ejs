@@ -9,23 +9,23 @@
     <div class="card">
 
     <table class="highlight">
-        <tr>
-            <th>Song</th><th>Singer</th><th>Added By</th><th>Likes</th><th>Actions</th>
-        </tr>
+        <tr> <th>Song</th><th>Singer</th><th>Added By</th><th>genre</th><th>link</th>
+        <th>Likes</th><th>Actions</th></tr>
 
         <% items.forEach(function(item){  %>
-        <tr>
-            <td><%= item.song%></td>
-            <td><%= item.add%></td>
-            <td><%= item.artist%></td>
-
+            <tr>
+            <td><%= item.song %></td>
+            <td><%= item.link %></td>
+            <td><%= item.add %></td>
+            <td><%= item.genre %></td>
+            <td><%= item.artist %></td>
 
 
 
          <td><i class="material-icons">favorite</i></td>
-         <td><i class="material-icons">delete</i></td>
+                <td><a href="/delete?song=%= item.song %>"><i class="material-icons">delete</i></a></td>
 
-        </tr>
+       </tr>
 
 
         <% }) %>
