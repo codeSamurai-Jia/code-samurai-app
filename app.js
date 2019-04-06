@@ -30,7 +30,7 @@ function databaseInitialize() {
 }
 
 //EJS
-var port = process.env.PORT || 7000;
+var port = process.env.PORT || 8888;
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
@@ -119,10 +119,10 @@ app.post('/login', function (request, response) {
 
 // when save button is clicked on add page
 app.post('/saveitem', function (request, response) {
-
+ var items =saveFormAndReturnAllItems(request.body)
     // hint #1: find the helper function that will help save the information first
     // hint #2: make sure to send the list of items to the list page
 
-    response.render('listpage',{ items:[] });
+    response.render('listpage',{ items:items });
 });
 

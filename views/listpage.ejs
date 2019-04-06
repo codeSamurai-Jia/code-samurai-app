@@ -14,9 +14,18 @@
         </tr>
 
         <% items.forEach(function(item){  %>
+        <tr>
+            <td><%= item.song%></td>
+            <td><%= item.add%></td>
+            <td><%= item.artist%></td>
 
 
 
+
+         <td><i class="material-icons">favorite</i></td>
+         <td><i class="material-icons">delete</i></td>
+
+        </tr>
 
 
         <% }) %>
